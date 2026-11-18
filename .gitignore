@@ -1,0 +1,38 @@
+# Local configuration and credentials
+config.yaml
+.slack.env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.aws/
+.codex/
+.agents/
+.claude/
+.ssh/
+# Private application state and research
+runtime/
+projects/
+workspaces/
+library/
+archive/
+jobs/
+backups/
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+*.log
+# Dependencies, caches and local tools
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.DS_Store
+*.tar.gz
+*.zip

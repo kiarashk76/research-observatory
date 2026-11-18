@@ -1,0 +1,36 @@
+name: Offline platform tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  platform:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: frontend/research-notes/package-lock.json
+      - name: Install Python dependencies and generic local configuration
+        run: |
+          python -m pip install -r requirements-dev.txt
+          cp config.example.yaml config.yaml
+      - name: Build editor and install browser
+        run: |
+          npm ci --prefix frontend/research-notes
+          node frontend/research-notes/build.mjs
+          mkdir -p runtime/tools/node/bin
+          ln -s "$(command -v node)" runtime/tools/node/bin/node
+          PLAYWRIGHT_BROWSERS_PATH="$PWD/runtime/tools/playwright" node frontend/research-notes/node_modules/playwright/cli.js install --with-deps chromium
+      - name: Check public source inventory
+        run: python scripts/check_public_release.py
+      - name: Run isolated tests without live accounts
+        run: |
+          python -m unittest discover -s tests -q
+          node --test tests/notes_*.test.mjs tests/dashboard_digests.test.js

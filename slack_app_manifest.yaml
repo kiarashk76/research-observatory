@@ -1,0 +1,35 @@
+display_information:
+  name: Research Supervisor
+  description: A research collaborator with on-demand engineering and literature specialists
+  background_color: "#24364b"
+features:
+  bot_user:
+    display_name: Supervisor
+    always_online: true
+oauth_config:
+  scopes:
+    bot:
+      - chat:write
+      - pins:write
+      - reactions:write
+      - channels:history
+      - channels:read
+      - groups:history
+      - groups:read
+      - files:read
+      - files:write
+settings:
+  event_subscriptions:
+    bot_events:
+      - message.channels
+      - message.groups
+      - member_joined_channel
+      - channel_archive
+      - channel_deleted
+      - group_archive
+      - group_deleted
+  interactivity:
+    is_enabled: true
+  org_deploy_enabled: false
+  socket_mode_enabled: true
+  token_rotation_enabled: false

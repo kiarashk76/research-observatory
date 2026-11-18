@@ -1,0 +1,98 @@
+# Copy to config.yaml and customize for your own server. Never commit config.yaml.
+version: 2
+timezone: UTC
+human_name: Researcher
+claude:
+  bin: claude
+  python_env: claude-env
+  shared_memory: true
+  shared_plugin_dirs:
+  - runtime/claude-shared/plugins
+  shared_session_history: true
+  accounts:
+  - id: primary
+    config_dir: runtime/claude-auth/primary
+  use_api_key: false
+  supervisor_model: opus
+  supervisor_effort: high
+  supervisor_minutes: 120
+  onboarding_model: haiku
+  onboarding_effort: low
+  api_retries: 1
+  api_timeout_ms: 60000
+  max_turns: 150
+  sandbox: true
+native_subagents:
+  enabled: true
+  max_concurrent: 4
+  default_model: sonnet
+scheduling:
+  poll_seconds: 2
+  debounce_seconds: 2
+  max_sessions: 4
+  max_workers: 2
+  reserve_supervisor_slot: true
+  preemption_priority: 90
+  preemption_grace_seconds: 45
+  retry_minutes: 120
+  max_error_retries: 3
+  max_session_minutes: 120
+  max_task_sessions: 64
+  max_task_children: 32
+subscription:
+  enabled: true
+  poll_when_idle: false
+  poll_seconds: 300
+  max_age_seconds: 900
+  large_task_threshold_percent: 95
+  small_task_threshold_percent: 98
+  reset_buffer_seconds: 30
+  supervisor_fallback_model: sonnet
+  supervisor_fallback_effort: medium
+budgets:
+  daily_agent_minutes: 1440
+  project_daily_minutes: 720
+  daily_output_tokens: null
+  task_minutes: 720
+  task_sessions: 48
+  task_children: 16
+  expensive_job_hours: 24
+  max_jobs: 4
+  task_jobs: 4
+resources:
+  allowed_gpus: all
+  min_gpu_free_fraction: 0.9
+  max_gpu_utilization: 10
+  gpu_sharing:
+    enabled: true
+    max_jobs_per_gpu: 4
+    memory_headroom_mib: 1024
+    memory_headroom_fraction: 0.1
+  reserve_cpu_threads: 2
+  max_cpu_threads_per_assignment: 8
+  max_cpu_threads_per_job: 4
+server_status:
+  enabled: true
+  poll_seconds: 15
+slack:
+  bot_name: Supervisor
+  avatar_file: supervisor.png
+  poll_joined_channels_seconds: 300
+  allowed_user_ids: []
+  urgent_broadcasts: true
+research_story:
+  format: study_table
+documentation:
+  enabled: true
+  report_format: legacy_pair
+  resume_cli_history: false
+  writer_model_ceiling: sonnet
+  writer_effort_ceiling: medium
+  review_model_ceiling: opus
+  review_effort_ceiling: high
+  max_build_minutes: 10
+research_chat:
+  enabled: true
+  model: sonnet
+  effort: medium
+  max_session_minutes: 120

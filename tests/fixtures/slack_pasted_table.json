@@ -1,0 +1,150 @@
+{
+  "text": "Please add these papers to the reading list:, with interactive elements",
+  "blocks": [
+    {
+      "type": "rich_text",
+      "elements": [
+        {
+          "type": "rich_text_section",
+          "elements": [
+            {
+              "type": "text",
+              "text": "Please add these papers to the reading list:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "raw_text",
+            "text": "Work"
+          },
+          {
+            "type": "raw_text",
+            "text": "Question"
+          },
+          {
+            "type": "raw_text",
+            "text": "Example use"
+          }
+        ],
+        [
+          {
+            "type": "raw_text",
+            "text": "Synthetic paper 1"
+          },
+          {
+            "type": "raw_text",
+            "text": "Illustrative method 1"
+          },
+          {
+            "type": "raw_text",
+            "text": "Example comparison 1"
+          }
+        ],
+        [
+          {
+            "type": "raw_text",
+            "text": "Synthetic paper 2"
+          },
+          {
+            "type": "raw_text",
+            "text": "Illustrative method 2"
+          },
+          {
+            "type": "raw_text",
+            "text": "Example comparison 2"
+          }
+        ],
+        [
+          {
+            "type": "raw_text",
+            "text": "Synthetic paper 3"
+          },
+          {
+            "type": "raw_text",
+            "text": "Illustrative method 3"
+          },
+          {
+            "type": "raw_text",
+            "text": "Example comparison 3"
+          }
+        ],
+        [
+          {
+            "type": "raw_text",
+            "text": "Synthetic paper 4"
+          },
+          {
+            "type": "raw_text",
+            "text": "Illustrative method 4"
+          },
+          {
+            "type": "raw_text",
+            "text": "Example comparison 4"
+          }
+        ],
+        [
+          {
+            "type": "raw_text",
+            "text": "Synthetic paper 5"
+          },
+          {
+            "type": "raw_text",
+            "text": "Illustrative method 5"
+          },
+          {
+            "type": "raw_text",
+            "text": "Example comparison 5"
+          }
+        ],
+        [
+          {
+            "type": "raw_text",
+            "text": "Synthetic paper 6"
+          },
+          {
+            "type": "raw_text",
+            "text": "Illustrative method 6"
+          },
+          {
+            "type": "raw_text",
+            "text": "Example comparison 6"
+          }
+        ],
+        [
+          {
+            "type": "raw_text",
+            "text": "Synthetic paper 7"
+          },
+          {
+            "type": "raw_text",
+            "text": "Illustrative method 7"
+          },
+          {
+            "type": "raw_text",
+            "text": "Example comparison 7"
+          }
+        ],
+        [
+          {
+            "type": "raw_text",
+            "text": "Synthetic paper 8"
+          },
+          {
+            "type": "raw_text",
+            "text": "Illustrative method 8"
+          },
+          {
+            "type": "raw_text",
+            "text": "Example comparison 8"
+          }
+        ]
+      ]
+    }
+  ]
+}

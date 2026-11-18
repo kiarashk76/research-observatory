@@ -1,0 +1,12 @@
+# Platform, dashboard, PDF/evidence and bounded plotting dependencies.
+# Install experiment-specific libraries separately in your own environment.
+PyYAML>=6,<7
+slack-bolt>=1.30,<2
+slack-sdk>=3.45,<4
+pypdf>=6,<7
+Pillow>=12,<14
+numpy>=2,<3
+scipy>=1.16,<2
+pandas>=2,<4
+matplotlib>=3.10,<4
+pypdfium2>=5,<6

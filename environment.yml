@@ -1,0 +1,45 @@
+# Shared Python environment for all lab agents.  Create/update with:  bash setup_env.sh
+# Note: PyTorch comes from conda-forge (not pip) so it shares ONE OpenMP runtime with numpy/scipy.
+# Mixing pip torch with conda-forge numpy causes "OMP: Error #15 ... libomp.dylib already initialized".
+name: claude-env
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11
+  - pip
+  # numerics / data
+  - numpy
+  - scipy
+  - pandas
+  - scikit-learn
+  - statsmodels
+  - sympy
+  - h5py
+  # deep learning (conda-forge builds include MPS on Apple Silicon)
+  - pytorch
+  - torchvision
+  - torchaudio
+  - einops
+  - tensorboard
+  # RL / models / data
+  - gymnasium
+  - pygame             # for gymnasium classic-control rendering
+  - transformers
+  - datasets
+  # plotting
+  - matplotlib
+  - seaborn
+  - plotly
+  # utilities
+  - tqdm
+  - pyyaml
+  - rich
+  - pytest
+  - ipykernel
+  - jupyterlab
+  - pip:
+      - minatar        # pure Python, no torch dependency
+      - slack_bolt     # Slack bridge (pure Python)
+      - pypdf>=6       # deterministic publication checks
+      - pillow         # validate published story figures
